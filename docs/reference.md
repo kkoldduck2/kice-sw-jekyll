@@ -1,7 +1,7 @@
 ---
 title: Software Architect 참고 자료
-layout: default
-nav_order: 2
+layout: page
+toc: true
 ---
 
 # Software Architect 참고 자료

@@ -1,8 +1,60 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
-theme: just-the-docs
+title: 소프트웨어 아키텍처 문서
+description: 소프트웨어 아키텍처와 관련된 기술 문서 모음
+remote_theme: cotes2020/jekyll-theme-chirpy
 
-url: https://just-the-docs.github.io
+url: https://garden92.github.io/kice-sw-jekyll
+baseurl: /kice-sw-jekyll
 
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+# Chirpy 테마 설정
+lang: ko
+timezone: Asia/Seoul
+
+# 소셜 링크 (선택사항)
+github:
+  username: garden92
+
+# 검색 기능
+search_enabled: true
+
+# 다크 모드 설정 (사용자가 선택 가능)
+theme_mode: # [light | dark]
+
+# 네비게이션 설정
+toc: true
+
+# Jekyll 플러그인
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-redirect-from
+
+# Paginate 설정
+paginate: 10
+
+# Archives 설정
+jekyll-archives:
+  enabled: [categories, tags]
+  layout: archive
+  permalinks:
+    category: '/categories/:name/'
+    tag: '/tags/:name/'
+
+# Defaults for posts and pages
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      toc: true

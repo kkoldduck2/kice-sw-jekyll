@@ -1,5 +1,4 @@
 ---
-title: Home
 layout: home
 ---
 
@@ -7,13 +6,26 @@ layout: home
 
 이 사이트는 소프트웨어 아키텍처와 관련된 기술 문서들을 정리한 위키입니다.
 
-## 주요 문서
+## 🔍 주요 기능
 
-- [기술 참고 자료](reference.md) - 소프트웨어 아키텍처 관련 종합 참고 자료
+- **강력한 검색**: 상단 검색창을 통해 모든 문서 내용을 빠르게 검색할 수 있습니다
+- **다크 모드**: 우상단 테마 토글로 다크/라이트 모드를 선택할 수 있습니다
+- **목차 자동 생성**: 각 페이지마다 자동으로 목차가 생성됩니다
 
-## 문서 구성
+## 📚 주요 문서
 
-1. **Software Architecture 설계/구축** - 데이터베이스 설정, Connection Pool, 비동기 처리 등
-2. **Software Architecture 핵심** - JVM, GC, 인터페이스 아키텍처 등 핵심 개념
-3. **Software Architecture 환경** - HTTP, 캐싱, 트랜잭션 처리 등 환경 설정
-4. **Software Architecture 운영/문제해결** - 모니터링, 성능 분석, 문제 해결 방법
+- [**기술 참고 자료**](reference.html) - 소프트웨어 아키텍처 관련 종합 참고 자료
+
+## 📋 문서 구성
+
+### 1. **Software Architecture 설계/구축**
+데이터베이스 설정, Connection Pool, 비동기 처리 등
+
+### 2. **Software Architecture 핵심** 
+JVM, GC, 인터페이스 아키텍처 등 핵심 개념
+
+### 3. **Software Architecture 환경**
+HTTP, 캐싱, 트랜잭션 처리 등 환경 설정
+
+### 4. **Software Architecture 운영/문제해결**
+모니터링, 성능 분석, 문제 해결 방법
