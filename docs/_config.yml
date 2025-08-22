@@ -1,60 +1,34 @@
 title: 소프트웨어 아키텍처 문서
 description: 소프트웨어 아키텍처와 관련된 기술 문서 모음
-remote_theme: cotes2020/jekyll-theme-chirpy
+remote_theme: just-the-docs/just-the-docs
 
 url: https://garden92.github.io/kice-sw-jekyll
 baseurl: /kice-sw-jekyll
 
-# Chirpy 테마 설정
-lang: ko
-timezone: Asia/Seoul
-
-# 소셜 링크 (선택사항)
-github:
-  username: garden92
-
-# 검색 기능
+# Just the Docs 테마 설정
+# 검색 기능 강화
 search_enabled: true
-
-# 다크 모드 설정 (사용자가 선택 가능)
-theme_mode: # [light | dark]
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
 
 # 네비게이션 설정
-toc: true
+nav_external_links:
+  - title: GitHub 저장소
+    url: https://github.com/garden92/kice-sw-jekyll
+    hide_icon: false
 
-# Jekyll 플러그인
+# 색상 테마 (다크 모드 스타일)
+color_scheme: dark
+
+# 로고 및 파비콘 (선택사항)
+logo: "/assets/images/logo.png"
+
+# 플러그인
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-archives
-  - jekyll-redirect-from
-
-# Paginate 설정
-paginate: 10
-
-# Archives 설정
-jekyll-archives:
-  enabled: [categories, tags]
-  layout: archive
-  permalinks:
-    category: '/categories/:name/'
-    tag: '/tags/:name/'
-
-# Defaults for posts and pages
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      comments: false
-      toc: true
-      permalink: /posts/:title/
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: page
-      toc: true
