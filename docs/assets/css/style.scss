@@ -1,17 +1,21 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+// 다크 테마 CSS 오버라이드 (Just the Docs 기본 스타일 위에 적용)
+:root {
+  --body-background-color: #1a1a1a;
+  --sidebar-color: #2d2d2d;
+  --body-text-color: #e0e0e0;
+  --body-heading-color: #ffffff;
+  --link-color: #4fc3f7;
+  --nav-child-link-color: #b0b0b0;
+}
 
-// 다크 테마 색상 스킴 강화
-$body-background-color: #1a1a1a !default;
-$sidebar-color: #2d2d2d !default;
-$body-text-color: #e0e0e0 !default;
-$body-heading-color: #ffffff !default;
-$nav-child-link-color: #b0b0b0 !default;
-$link-color: #4fc3f7 !default;
-$btn-primary-color: #4fc3f7 !default;
-$base-button-color: #3a3a3a !default;
+// 기본 배경과 텍스트 색상
+body {
+  background-color: var(--body-background-color) !important;
+  color: var(--body-text-color) !important;
+}
 
 // 검색창 스타일 개선
 .site-search-input {

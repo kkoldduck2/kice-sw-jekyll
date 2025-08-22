@@ -23,8 +23,8 @@ nav_external_links:
     url: https://github.com/garden92/kice-sw-jekyll
     hide_icon: false
 
-# 색상 테마 (다크 모드 스타일)
-color_scheme: dark
+# 색상 테마는 커스텀 CSS로 처리
+# color_scheme: dark
 
 # 로고 및 파비콘 (선택사항)
 logo: "/assets/images/logo.png"
