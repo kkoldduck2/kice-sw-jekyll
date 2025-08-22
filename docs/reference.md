@@ -2,7 +2,6 @@
 title: Software Architect 참고 자료
 layout: default
 nav_order: 2
-has_children: false
 ---
 
 # Software Architect 참고 자료
