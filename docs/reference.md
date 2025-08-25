@@ -428,6 +428,56 @@ Eclipse MAT 설치: https://www.eclipse.org/mat/
 - -Xms, -Xmx는 절대값 기준
 - -XX:XXXPercentage는 컨테이너 제한 메모리 비율 기준
 
+##### 추가) JVM 힙메모리 설정 방식
+1) 전통적인 방식 (-Xms, -Xmx)
+
+- `Xms1g -Xmx1g`
+- **Xms**: 초기 힙 메모리 크기
+- **Xmx**: 최대 힙 메모리 크기
+
+2) 컨테이너 환경용 퍼센테이지 방식
+
+`XX:InitialRAMPercentage=30.0
+-XX:MinRAMPercentage=50.0
+-XX:MaxRAMPercentage=80.0`
+
+3) 퍼센테이지 옵션 의미
+**InitialRAMPercentage**
+
+- JVM 시작 시 초기 힙 메모리 비율
+- 컨테이너 메모리의 30% = 약 300MB
+
+**MaxRAMPercentage**
+
+- 최대 힙 메모리 비율
+- 컨테이너 메모리의 80% = 약 800MB
+
+**MinRAMPercentage** ⚠️
+
+- **250MB 미만 환경**에서만 유효
+- 250MB 미만 환경에서는
+    - MinRAMPercentage 설정을 보고 이걸 힙 메모리 최대 크기로 제한
+    - MaxRAMPercentage 설정은 무시됨
+    - 즉, 소형 시스템에서의 최대 힙 크기
+- 250MB 이상 환경에서는
+    - MaxRAMPercentage 설정을 보고 이걸 힙 메모리 최대 크기로 제한
+    - MinRAMPercentage 설정은 무시됨
+- 1GB 환경에서는 **무효한 옵션**
+
+4) 컨테이너 환경 특별 고려사항
+- OOMKilled 위험
+```yaml
+resources:
+  limits:
+    memory: "1Gi"  *# 컨테이너 전체 메모리*
+env:
+  - name: JAVA_OPTS
+    value: "-Xms1g -Xmx1g"  *# 힙만 1GB*
+```
+
+힙 외에 **non-heap 메모리**(메타스페이스, 스택, 직접 메모리) 때문에 OOMKilled 발생 가능
+
+
 #### Kubernetes Pod 메모리 설정 + JVM 튜닝 예제
 
 ```yaml
